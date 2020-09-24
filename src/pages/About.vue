@@ -1,14 +1,114 @@
 <template>
   <Layout>
-    <h1>About us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <section class="container">
+      <h2 class="emphasize">Our team</h2>
+      <p>Get to know your support team</p>
+      <div class="grid-team">
+        <Teamcard v-for="(member, index) in team" :key="member.name" class="team-member" :name="member.name" :title="member.title" :degree="member.degree" :bio="member.bio" :photo="member.photo" :index="index">
+        </Teamcard>
+      </div>
+    </section>
+
+    <section class="mission">
+      <div class="container">
+        <h2>Our mission</h2>
+        <p>Our mission is to provide patients seeking physiotherapy treatment in a professional, yet personal manner, and to provide the best available treatment utilising up to date physiotherapy practices.</p>
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
+import Teamcard from "~/components/Teamcard.vue"
+
 export default {
   metaInfo: {
     title: 'About us'
+  },
+  data() {
+    return {
+      team: [{
+        name: "Blair Clatworthy",
+        title: "Director/Senior Physiotherapist",
+        degree: "MNZSP, B.Phty, B.Sc (Hons)",
+        bio: "Blair graduated from Otago University in 1992 after completing an Honours degree in Physiology and in 1996 he obtained his second degree in Physiotherapy. Blair has worked in various private practices around the Canterbury region and in 1999 he bought his first Physiotherapy practice, Ferry Road Physiotherapy which was sold in 2003 with the arrival of his first child. In 2000 Blair bought Central City Physiotherapy clinic from Marg Fife. Since graduating Blair has continued postgraduate education and he gained acupuncture registration in 2001. Blair has many interests, most of which involve sports or the outdoors. He believes in having a healthy mix of work and play, and encourages everyone else to do the same.",
+        photo: {}
+      },
+      {
+        name: "Tania MacKay",
+        title: "Senior Physiotherapist",
+        degree: "MNZSP, Dip. Phty, MSMNZ",
+        bio: '25 years experience.Tania graduated from Otago School of Physiotherapy in 1989. Of the past 25 years, she has spent 21 years specialising in sports physiotherapy, orthopaedic and musculoskeletal physiotherapy, working in a private practice in New Zealand (primarily Christchurch), and in the UK in a senior hospital role including supervision and teaching. Tania is a mother of two daughters aged 8 and 11, loves her outdoor pursuits including mountain biking, cycling, hiking and skiing, and in her "spare time" she guides multi-day cycling and mountain biking tours, South Island wide.',
+        photo: {}
+      },
+      {
+        name: "Sherry Malik",
+        title: "Physiotherapist",
+        degree: "MNZSP, B.Phty",
+        bio: "Sherry is our new enthusiastic and friendly Physiotherapist, she graduated from the University of Otago in 2019 with her Bachelors of Physiotherapy. During her time at the University of Otago she was the President of the Physiotherapy Students' Association, she likes to keep busy and is passionate about all outdoor activities and sports, particularly football and volleyball. Sherry has worked with rugby and football teams and is interested in treating all kinds of sports and general injuries. Sherry is also very keen on working with anyone who is wanting to gain a more active and pain-free lifestyle.Whether that may be related to sports or just regular day to day life. She is excited to gain more experience and cannot wait to help patients rehabilitate with whatever they may be experiencing.",
+        photo: {}
+      },
+      {
+        name: "Tessa Hartland",
+        title: "Physiotherapist",
+        degree: "MNZSP, B.Phty",
+        bio: "Tessa completed a Bachelor of Physiotherapy degree from the University of Otago in 2019 and joined the Tower Junction Physio team in 2020. Coming from a sporting background, Tessa has a particular interest in sport rehabilitation and has spent time working with rugby teams in Dunedin and Christchurch. Tessa is passionate about leading a balanced, active lifestyle and likes spending her spare time outdoors. She also enjoys keeping fit in the gym, spending time with friends and family and travelling, having recently returned from a trip around Central America.",
+        photo: {}
+      },
+      {
+        name: "Reception lady",
+        title: "Receptionst",
+        degree: "-",
+        bio: "lorem ipsum text long text longer text, with more words and sentences here.",
+        photo: {}
+      },
+      {
+        name: "Ms Reception lady",
+        title: "Receptionist",
+        degree: "-",
+        bio: "lorem ipsum text long text longer text, with more words and sentences here.",
+        photo: {}
+      },
+      ]
+    }
+  },
+  components: {
+    Teamcard
   }
 }
 </script>
+
+<style lang="scss">
+  h2 {
+    color:#333333;
+    &.emphasize {
+      &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 4px;
+      background-color: #99cc00;
+      animation: show 0.4s ease forwards;
+    }
+    @keyframes show {
+      from {width: 0px;}
+      to {width: 40px;}
+      }
+    }
+  }
+  .grid-team {
+    display: flex;
+    flex-direction: column;
+  }
+  .mission {
+    background-color:  #add145;
+    padding: 20px;
+    color: #4d4d4d;
+    h2 {
+      color: #1e2e4d;
+      &:after {
+
+      }
+    }
+  }
+</style>
