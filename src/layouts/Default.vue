@@ -1,26 +1,30 @@
 <template>
   <div class="layout">
-    <header>
+    <header class="menubar">
       <div class="container header">
       <g-image src="~/assets/tjplogo.png" width="240" />
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
         <g-link class="nav__link" to="/treatments">Treatments</g-link>
+        <g-link class="nav__link" to="/news">News</g-link>
       </nav>
       </div>
     </header>
+    <main>
     <slot/>
+    </main>
     <footer>
       <div class="container footer">
         <section class="hours">
-          <p>Opening hours</p>
+          <strong><p>Opening hours</p></strong>
           <p>Monday: 7am -8pm</p>
-          <p>Monday: 7am -8pm</p>
-          <p>Monday: 7am -8pm</p>
-          <p>Monday: 7am -8pm</p>
-          <p>Monday: 7am -8pm</p>
-          <p>Weekend: closed</p>
+          <p>Tuesdag: 7am -8pm</p>
+          <p>Wednesday: 7am -8pm</p>
+          <p>Thursday: 7am -8pm</p>
+          <p>Friday: 7am -8pm</p>
+          <p>Saturday: closed</p>
+          <p>Sunday: closed</p>
         </section>
         <section class="contact">
           <p>phone number and </p>
@@ -35,13 +39,6 @@
 </template>
 
 <style lang="scss">
-body {
-  font-family: "Open Sans", sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
 .layout {
   width: 100%;
   margin: 0;
@@ -49,11 +46,12 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
-header {
+.menubar {
     background-color: #3e5c9a;
 }
 
@@ -61,8 +59,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  margin-bottom: 20px;
+  padding: 8px 80px;
   height: 80px;
 }
 
@@ -74,14 +71,14 @@ header {
 }
 
 footer {
-    background-color: #2d426c;
+    background-color: #1e2e4d;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 12px 80px;
   color: white;
   font-size: 13px;
   section {

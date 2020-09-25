@@ -1,8 +1,23 @@
 <template>
   <Layout>
+    <section class="container location">
+      <div class="hours">
+        <strong><p>Opening hours</p></strong>
+        <p>Monday: 7am -8pm</p>
+        <p>Tuesdag: 7am -8pm</p>
+        <p>Wednesday: 7am -8pm</p>
+        <p>Thursday: 7am -8pm</p>
+        <p>Friday: 7am -8pm</p>
+        <p>Saturday: closed</p>
+        <p>Sunday: closed</p>
+      </div>
+      <div class="route">
+        <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
+      </div>
+    </section>
     <section class="container">
-      <h2 class="emphasize">Our team</h2>
-      <p>Get to know your support team</p>
+      <h2 class="emphasize green">Our team</h2>
+      <p>Meet the Tower Junction Physio team</p>
       <div class="grid-team">
         <Teamcard v-for="(member, index) in team" :key="member.name" class="team-member" :name="member.name" :title="member.title" :degree="member.degree" :bio="member.bio" :photo="member.photo" :index="index">
         </Teamcard>
@@ -11,7 +26,7 @@
 
     <section class="mission">
       <div class="container">
-        <h2>Our mission</h2>
+        <h2 class="emphasize white">Our mission</h2>
         <p>Our mission is to provide patients seeking physiotherapy treatment in a professional, yet personal manner, and to provide the best available treatment utilising up to date physiotherapy practices.</p>
       </div>
     </section>
@@ -87,8 +102,17 @@ export default {
       display: block;
       width: 40px;
       height: 4px;
-      background-color: #99cc00;
       animation: show 0.4s ease forwards;
+    }
+    &.green {
+      &:after {
+        background-color: #99cc00;
+      }
+    }
+    &.white {
+      &:after {
+        background-color: white;
+      }
     }
     @keyframes show {
       from {width: 0px;}
@@ -106,9 +130,6 @@ export default {
     color: #4d4d4d;
     h2 {
       color: #1e2e4d;
-      &:after {
-
-      }
     }
   }
 </style>

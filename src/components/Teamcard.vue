@@ -86,4 +86,7 @@ export default {
 
     }
 }
+.team-member:last-child {
+    border-bottom: none;
+}
 </style>
