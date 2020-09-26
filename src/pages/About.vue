@@ -30,11 +30,22 @@
         <p>Our mission is to provide patients seeking physiotherapy treatment in a professional, yet personal manner, and to provide the best available treatment utilising up to date physiotherapy practices.</p>
       </div>
     </section>
+
+    <section class="history">
+      <div class="container">
+        <h2 class="emphasize green">History</h2>
+        <div class="timeline">
+          <TimelineEvent v-for="(event, index) in history" :key="event.index" :index="index" class="timeline-event" :year="event.year" :description="event.description" >
+          </TimelineEvent>
+        </div>
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
 import Teamcard from "~/components/Teamcard.vue"
+import TimelineEvent from "~/components/TimelineEvent.vue"
 
 export default {
   metaInfo: {
@@ -84,11 +95,29 @@ export default {
         bio: "lorem ipsum text long text longer text, with more words and sentences here.",
         photo: {}
       },
+      ],
+      history: [{
+        year: "May 2011",
+        description: "The new clinic, Tower Junction Physio opened. Due to the new location, Tower Junction Physio became the new official name of Central City Physiotherapy Clinic."
+      },
+      {
+        year: "February 2011",
+        description: "After the earthquake the clinic was temporary operating from Wairakei Road while the new premises on the corner of Clarence Street and Blenheim Road underwent a huge makeover. To see the video, click here."
+      },
+      {
+        year: "2003",
+        description: " In 2003 Jo sold the podiatry business to Nick Haley and Blair was only focusing on physiotherapy. Blair and Nick operated the clinic as a partnership, offering a professional team approach to all clients of Central City Clinic until February 2011."
+      },
+      {
+        year: "2000",
+        description: "Blair Clatworthy and his wife Jo- who is a Podiatrist- bought the business off Marg as she wished to travel overseas and pursue another career. (Blair also owned Ferry Road Physiotherapy which he sold in 2004)."
+      }
       ]
     }
   },
   components: {
-    Teamcard
+    Teamcard,
+    TimelineEvent
   }
 }
 </script>
@@ -126,7 +155,7 @@ export default {
   }
   .mission {
     background-color:  #add145;
-    padding: 20px;
+    padding: 20px 0;
     color: #4d4d4d;
     h2 {
       color: #1e2e4d;
