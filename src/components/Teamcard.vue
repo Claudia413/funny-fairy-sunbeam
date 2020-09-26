@@ -20,7 +20,6 @@ export default {
   },
   data() {
     return {
-      showFront: true,
     }
   },
   props: {
@@ -33,7 +32,6 @@ export default {
   },
   methods: {
       even(i) {
-          console.log('hello', i, i%2 == 0);
           return i%2 == 0;
 
       }
