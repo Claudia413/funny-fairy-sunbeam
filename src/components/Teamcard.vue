@@ -80,6 +80,26 @@ export default {
             font-family: "Hind";
         }
     }
+     @media screen and(max-width: 768px) {
+        flex-direction: column;
+        &.reverse {
+        flex-direction: column;
+        .team-profile-text {
+            text-align: center;
+            max-width: 90%;
+        }
+        }
+        .team-profile-photo {
+            width: 200px;
+            margin-inline-end: 0;
+            margin-inline-start: 0;
+        }
+        .team-profile-text {
+            text-align: center;
+            max-width: 90%;
+        }
+
+    }
     .team-member-bio {
 
     }
