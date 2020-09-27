@@ -49,6 +49,9 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 80px;
+  @media screen and(max-width: 768px) {
+    padding: 0 32px;
+  }
 }
 
 .menubar {
@@ -59,7 +62,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 80px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   height: 80px;
 }
 
@@ -78,7 +82,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 80px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   color: white;
   font-size: 13px;
   section {
