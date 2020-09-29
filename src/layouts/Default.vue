@@ -17,7 +17,7 @@
     <footer>
       <div class="container footer">
         <section class="hours">
-          <strong><p>Opening hours</p></strong>
+          <p class="strong">Opening hours</p>
           <p>Monday: 7am -8pm</p>
           <p>Tuesdag: 7am -8pm</p>
           <p>Wednesday: 7am -8pm</p>
@@ -27,11 +27,17 @@
           <p>Sunday: closed</p>
         </section>
         <section class="contact">
-          <p>phone number and </p>
-          <p>address</p>
+          <address class="footer-address">
+          <p class="strong">Call us at:</p>
+          <p><a href="tel:033434345" class="phonenumber">(03) 34 34 345</a></p>
+          <p class="strong">Find us at:</p>
+          <p>109 Clarence Street<br/>
+          Riccarton<br/>
+          Christchurch, 8011 <br/>
+          (Corner of Clarence Street and Blenheim Road)</p></address>
         </section>
         <section class="location">
-          <p>map picture with link to google</p>
+          <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" />
         </section>
       </div>
     </footer>
@@ -81,7 +87,7 @@ footer {
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 12px;
   padding-bottom: 12px;
   color: white;
@@ -89,8 +95,18 @@ footer {
   section {
     margin: 8px;
   }
+  .strong {
+      font-weight: bold;
+    }
   .hours {
     line-height: 1;
+  }
+  .footer-address {
+    font-style: normal;
+    .phonenumber {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
 </style>
