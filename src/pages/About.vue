@@ -15,7 +15,7 @@
         <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
       </div>
     </section>
-    <section class="container">
+    <section class="container team">
       <h2 class="emphasize green">Our team</h2>
       <p>Meet the Tower Junction Physio team</p>
       <div class="grid-team">
@@ -155,10 +155,15 @@ export default {
   }
   .mission {
     background-color:  #add145;
-    padding: 20px 0;
     color: #4d4d4d;
     h2 {
       color: #1e2e4d;
     }
+  }
+  .team, .mission, .history {
+    padding: 20px 0;
+  }
+  .timeline {
+    margin-bottom: 40px;
   }
 </style>
