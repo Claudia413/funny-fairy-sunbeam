@@ -40,7 +40,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .team-member {
     display: flex;
     align-items: center;
@@ -83,11 +82,11 @@ export default {
      @media screen and(max-width: 768px) {
         flex-direction: column;
         &.reverse {
-        flex-direction: column;
-        .team-profile-text {
-            text-align: center;
-            max-width: 90%;
-        }
+            flex-direction: column;
+            .team-profile-text {
+                text-align: center;
+                max-width: 90%;
+            }
         }
         .team-profile-photo {
             width: 200px;
@@ -98,10 +97,6 @@ export default {
             text-align: center;
             max-width: 90%;
         }
-
-    }
-    .team-member-bio {
-
     }
 }
 .team-member:last-child {
