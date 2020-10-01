@@ -26,6 +26,7 @@
         <p>At Tower Junction Physio we specialise in:</p>
         <div class="card-grid">
           <div class="category-card">
+            <Doctor />
             <h4>Injuries</h4>
             <ul>
               <li>Sports injuries</li>
@@ -36,6 +37,7 @@
             </ul>
           </div>
           <div class="category-card">
+            <EmoticonHappyOutline />
             <h4>Relieving pain</h4>
             <ul>
               <li>Back pain</li>
@@ -44,6 +46,7 @@
             </ul>
           </div>
           <div class="category-card">
+            <WeightLifter/>
             <h4>Correction</h4>
             <ul>
               <li>Exercise prescription for strength and endurance</li>
@@ -55,6 +58,8 @@
             </ul>
           </div>
           <div class="category-card">
+          <ClipboardAccountOutline />
+
             <h4>Assessments</h4>
             <ul>
               <li>Correctly diagnosing your injury or pain</li>
@@ -99,8 +104,10 @@
 </template>
 
 <script>
-import Teamcard from "~/components/Teamcard.vue"
-import TimelineEvent from "~/components/TimelineEvent.vue"
+import WeightLifter from "mdi-vue/WeightLifter.vue";
+import Doctor from "mdi-vue/Doctor.vue";
+import ClipboardAccountOutline from "mdi-vue/ClipboardAccountOutline.vue";
+import EmoticonHappyOutline from "mdi-vue/EmoticonHappyOutline.vue";
 
 export default {
   metaInfo: {
@@ -136,8 +143,10 @@ export default {
     }
   },
   components: {
-    Teamcard,
-    TimelineEvent
+    WeightLifter,
+    Doctor,
+    ClipboardAccountOutline,
+    EmoticonHappyOutline
   }
 }
 </script>
