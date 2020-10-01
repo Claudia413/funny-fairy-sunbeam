@@ -2,14 +2,14 @@
   <Layout>
     <section class="section navigation">
       <div class="container sub-navigation">
-        <h6>What is Physiotherapy?</h6>
-        <h6>When can we help?</h6>
-        <h6>How do we help?</h6>
-        <h6>What to expect?</h6>
+        <a class="section-link" href="#what-is"><h6>What is Physiotherapy?</h6></a>
+        <a class="section-link" href="#treatments"><h6>When can we help?</h6></a>
+        <a class="section-link" href="#techniques"><h6>How do we help?</h6></a>
+        <a class="section-link" href="#what-to-expect"><h6>What to expect?</h6></a>
       </div>
     </section>
 
-    <section class="section what-is">
+    <section class="section what-is" id="what-is">
       <div class="container">
         <h2 class="emphasize green">What is Physiotherapy?</h2>
         <p>Physiotherapy is a medical profession which aims to speed up your recovery from injury, prevent injuries from occurring in the future and keep you healthy and fit.</p>
@@ -20,7 +20,7 @@
       </div>
     </section>
 
-    <section class="section treatments">
+    <section class="section treatments" id="treatments">
       <div class="container">
         <h2 class="emphasize green">When can we help?</h2>
         <p>At Tower Junction Physio we specialise in:</p>
@@ -66,7 +66,7 @@
       </div>
     </section>
 
-    <section class="section techniques">
+    <section class="section techniques" id="techniques">
       <div class="container">
         <h2 class="emphasize green">How can we help?</h2>
         <div class="technique-grid">
@@ -85,7 +85,7 @@
       </div>
     </section>
 
-    <section class="section what-to-expect">
+    <section class="section what-to-expect" id="what-to-expect">
       <div class="container">
         <h2 class="emphasize green">What to expect?</h2>
         <p>We offer individual personalised care in a comfortable and relaxing environment. All treatments are carried out in individual rooms and all our staff share a commitment to provide patients with the highest possible standard of treatments and service.</p>
@@ -181,7 +181,9 @@ h2 {
     color:  #1e2e4d;
     font-weight: 600;
   }
-
+  .section-link {
+    text-decoration: none;
+  }
 }
 .section {
   margin-bottom: 64px;
@@ -215,6 +217,10 @@ h2 {
   column-gap: 16px;
   max-width: 80%;
   margin: 0 auto;
+   @media screen and(max-width: 911px) {
+     column-gap: 8px;
+     max-width: 80%;
+   }
 }
 .button {
   display: inline-block;
@@ -227,13 +233,17 @@ h2 {
     background-color:#99cc00;
     color: white;
   }
+  @media screen and(max-width: 768px) {
+     margin-right: 4px;
+     padding: 8px 24px;
+   }
 }
 .technique-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
   h6 {
     color: #99cc00;
     font-size: 20px;
