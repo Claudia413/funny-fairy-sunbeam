@@ -87,6 +87,16 @@
               <p :key="techniques[techniqueIndex].description">{{techniques[techniqueIndex].description}}</p>
           </transition>
         </div>
+        <div class="technique-accordion">
+          <div v-for="(technique, index) in techniques" class="accordion-container" :key="technique.technique" >
+            <div class="accordion-button" :class="techniqueIndex==index?'active':''" @click="techniqueIndex = index">
+            {{technique.technique}}
+            </div>
+            <div class="accordion-card" :class="techniqueIndex==index?'active':''" >
+              {{techniques[techniqueIndex].description}}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -115,7 +125,7 @@ export default {
   },
   data() {
     return {
-      techniqueIndex: 5,
+      techniqueIndex: 3,
       techniques: [{
         technique: 'Education',
         description: 'Education is where we provide you with an understanding of what you have injured, why it is injured, how to fix the injury and how to stop it from happening again. If you understand all these aspects it gives you the ability to control your life better and in a safer way.'},
@@ -224,8 +234,7 @@ h2 {
   h4 {
     font-family: "Open Sans", Helvetica, sans-serif;
     color: #99cc00;
-    font-size: 18px;
-    line-height: 36px;
+    margin: 24px 0;
   }
   ul {
     text-align: center;
@@ -256,6 +265,9 @@ h2 {
      column-gap: 8px;
      max-width: 80%;
    }
+   @media screen and(max-width: 890px) {
+     display: none;
+   }
 }
 .button {
   display: inline-block;
@@ -269,10 +281,6 @@ h2 {
     color: white;
     border-color:#99cc00;
   }
-  @media screen and(max-width: 768px) {
-     margin-right: 4px;
-     padding: 8px 24px;
-   }
 }
 .technique-description {
   display: flex;
@@ -286,7 +294,34 @@ h2 {
     line-height: 32px;
     margin: 0;
   }
+  @media screen and(max-width: 890px) {
+     display: none;
+   }
 }
+.technique-accordion {
+  display: none;
+  .accordion-button {
+    width: 100%;
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #1e2e4d1a;
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  .accordion-card {
+    height: 0;
+    overflow: hidden;
+    &.active {
+      height: auto;
+    }
+  }
+  @media screen and(max-width: 890px) {
+     display: block;
+   }
+}
+
 .faderesize-enter-active {
   transition: all 0.3s ease;
 }
