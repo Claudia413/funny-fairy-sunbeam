@@ -182,6 +182,8 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 16px;
   h6 {
     border-bottom: 4px solid #99cc00;
     padding-bottom: 4px;
@@ -189,9 +191,11 @@ h2 {
     font-size: 14px;
     color:  #1e2e4d;
     font-weight: 600;
+    margin: 0;
   }
   .section-link {
     text-decoration: none;
+    margin: 16px 0;
   }
 }
 .section {
