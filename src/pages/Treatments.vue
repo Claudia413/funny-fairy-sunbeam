@@ -188,7 +188,8 @@ h2 {
     border-bottom: 4px solid #99cc00;
     padding-bottom: 4px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 33px;
     color:  #1e2e4d;
     font-weight: 600;
     margin: 0;
