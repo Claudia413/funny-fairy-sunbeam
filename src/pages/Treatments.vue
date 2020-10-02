@@ -26,7 +26,7 @@
         <p>At Tower Junction Physio we specialise in:</p>
         <div class="card-grid">
           <div class="category-card">
-            <Doctor />
+            <Doctor size="43" class="treatment-icon" />
             <h4>Injuries</h4>
             <ul>
               <li>Sports injuries</li>
@@ -37,7 +37,7 @@
             </ul>
           </div>
           <div class="category-card">
-            <EmoticonHappyOutline />
+            <EmoticonHappyOutline size="43" class="treatment-icon" />
             <h4>Relieving pain</h4>
             <ul>
               <li>Back pain</li>
@@ -46,19 +46,19 @@
             </ul>
           </div>
           <div class="category-card">
-            <WeightLifter/>
+            <WeightLifter size="43" class="treatment-icon" />
             <h4>Correction</h4>
             <ul>
-              <li>Exercise prescription for strength and endurance</li>
               <li>Muscle imbalance</li>
               <li>Soft tissue management</li>
               <li>Manual lifting techniques</li>
               <li>Correction of movement patterns</li>
               <li>Core strength and gluteal activation</li>
+              <li>Exercise prescription for strength and endurance</li>
             </ul>
           </div>
           <div class="category-card">
-          <ClipboardAccountOutline />
+          <ClipboardAccountOutline size="43" class="treatment-icon" />
 
             <h4>Assessments</h4>
             <ul>
@@ -200,23 +200,39 @@ h2 {
 .card-grid {
   display: flex;
   flex-flow: wrap;
-  row-gap: 24px;
-  column-gap: 24px;
+  column-gap: 8px;
+  justify-content: space-between;
 }
 .category-card {
-  width: 45%;
-  max-width: 50%;
+  width: 22%;
+  height: auto;
   box-sizing: border-box;
   background-color: white;
-  padding: 16px 32px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border: 1px solid #1e2e4d1a;
   h4 {
     font-family: "Open Sans", Helvetica, sans-serif;
     color: #99cc00;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 36px;
+  }
+  ul {
+    text-align: center;
+    margin: 0;
+    padding-inline-start: 0;
   }
   li {
     font-size: 14px;
+    list-style-type: none;
+    line-height: 30px;
+  }
+  .treatment-icon {
+    color: #1e2e4d;
+    margin-top: 24px;
   }
 }
 .technique-grid {
@@ -241,6 +257,7 @@ h2 {
   &.active {
     background-color:#99cc00;
     color: white;
+    border-color:#99cc00;
   }
   @media screen and(max-width: 768px) {
      margin-right: 4px;
