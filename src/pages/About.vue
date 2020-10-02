@@ -15,12 +15,14 @@
         <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
       </div>
     </section>
-    <section class="container team">
+    <section class="team">
+      <div class="container">
       <h2 class="emphasize green">Our team</h2>
       <p>Meet the Tower Junction Physio team</p>
       <div class="grid-team">
         <Teamcard v-for="(member, index) in team" :key="member.name" class="team-member" :name="member.name" :title="member.title" :degree="member.degree" :bio="member.bio" :photo="member.photo" :index="index">
         </Teamcard>
+      </div>
       </div>
     </section>
 
