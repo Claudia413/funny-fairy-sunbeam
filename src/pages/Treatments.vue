@@ -201,7 +201,9 @@ h2 {
   display: flex;
   flex-flow: wrap;
   column-gap: 8px;
+  row-gap: 32px;
   justify-content: space-between;
+
 }
 .category-card {
   width: 22%;
@@ -233,6 +235,9 @@ h2 {
   .treatment-icon {
     color: #1e2e4d;
     margin-top: 24px;
+  }
+  @media screen and(max-width:1024px) {
+    width: 45%;
   }
 }
 .technique-grid {
