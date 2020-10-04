@@ -95,7 +95,7 @@
             </div>
             <div class="accordion-card" :class="techniqueIndex == index?'active':''" >
               <div class="content">
-              {{techniques[techniqueIndex].description}}
+              <p>{{techniques[techniqueIndex].description}}</p>
               </div>
             </div>
           </div>
