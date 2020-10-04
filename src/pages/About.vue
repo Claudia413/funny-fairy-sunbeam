@@ -84,14 +84,14 @@ export default {
         photo: {}
       },
       {
-        name: "Reception lady",
+        name: "Jacky",
         title: "Receptionst",
         degree: "-",
         bio: "lorem ipsum text long text longer text, with more words and sentences here.",
         photo: {}
       },
       {
-        name: "Ms Reception lady",
+        name: "Tracy",
         title: "Receptionist",
         degree: "-",
         bio: "lorem ipsum text long text longer text, with more words and sentences here.",

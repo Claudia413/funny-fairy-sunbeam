@@ -28,7 +28,6 @@ export default {
   },
   methods: {
       even(i) {
-          console.log('timeline', i, i%2 == 0);
           return i%2 == 0;
 
       }
