@@ -125,7 +125,7 @@ import ChevronDown from "mdi-vue/ChevronDown.vue";
 
 export default {
   metaInfo: {
-    title: 'About us'
+    title: 'Treatments'
   },
   data() {
     return {
@@ -176,32 +176,7 @@ export default {
 </script>
 
 <style lang="scss">
-h2 {
-  color:#333333;
-  &.emphasize {
-    &:after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 4px;
-    animation: show 0.4s ease forwards;
-  }
-  &.green {
-    &:after {
-      background-color: #99cc00;
-    }
-  }
-  &.white {
-    &:after {
-      background-color: white;
-    }
-  }
-  @keyframes show {
-    from {width: 0px;}
-    to {width: 40px;}
-    }
-  }
-}
+
 .sub-navigation {
   display: flex;
   flex-direction: row;
@@ -221,6 +196,7 @@ h2 {
   .section-link {
     text-decoration: none;
     margin: 16px 0;
+    padding-right: 8px;
   }
 }
 .section {

@@ -68,16 +68,6 @@ export default {
             margin-bottom: 4px;
             font-family: "Open Sans", sans-serif;
         }
-        .subtitle {
-            margin: 0;
-            font-size: 13px;
-            color: #4d4d4d;
-            line-height: 13px;
-        }
-        h5 {
-            font-size: 16px;
-            font-family: "Hind";
-        }
     }
      @media screen and(max-width: 768px) {
         flex-direction: column;
