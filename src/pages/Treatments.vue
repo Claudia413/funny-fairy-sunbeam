@@ -89,11 +89,14 @@
         </div>
         <div class="technique-accordion">
           <div v-for="(technique, index) in techniques" class="accordion-container" :key="technique.technique" >
-            <div class="accordion-button" :class="techniqueIndex==index?'active':''" @click="techniqueIndex = index">
-            {{technique.technique}}
+            <div class="accordion-button" :class="techniqueIndex == index?'active':''"
+            @click="setTechniqueShown(index)">
+            {{technique.technique}} <ChevronDown class="chevron" />
             </div>
-            <div class="accordion-card" :class="techniqueIndex==index?'active':''" >
+            <div class="accordion-card" :class="techniqueIndex == index?'active':''" >
+              <div class="content">
               {{techniques[techniqueIndex].description}}
+              </div>
             </div>
           </div>
         </div>
@@ -118,6 +121,7 @@ import WeightLifter from "mdi-vue/WeightLifter.vue";
 import Doctor from "mdi-vue/Doctor.vue";
 import ClipboardAccountOutline from "mdi-vue/ClipboardAccountOutline.vue";
 import EmoticonHappyOutline from "mdi-vue/EmoticonHappyOutline.vue";
+import ChevronDown from "mdi-vue/ChevronDown.vue";
 
 export default {
   metaInfo: {
@@ -125,7 +129,7 @@ export default {
   },
   data() {
     return {
-      techniqueIndex: 3,
+      techniqueIndex: 0,
       techniques: [{
         technique: 'Education',
         description: 'Education is where we provide you with an understanding of what you have injured, why it is injured, how to fix the injury and how to stop it from happening again. If you understand all these aspects it gives you the ability to control your life better and in a safer way.'},
@@ -156,7 +160,17 @@ export default {
     WeightLifter,
     Doctor,
     ClipboardAccountOutline,
-    EmoticonHappyOutline
+    EmoticonHappyOutline,
+    ChevronDown
+  },
+  methods: {
+    setTechniqueShown(techniqueId) {
+      if (this.techniqueIndex == techniqueId) {
+        console.log("write code to close the accordion")
+      } else {
+        this.techniqueIndex = techniqueId
+      }
+    }
   }
 }
 </script>
@@ -306,15 +320,40 @@ h2 {
     padding: 8px;
     border: 1px solid #1e2e4d1a;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.2s ease-out;
     &:hover {
-      font-weight: bold;
+      font-weight: 600;
+      color: #99cc00;
+    }
+    &.active {
+      color: #99cc00;
+      font-weight: 600;
+      .chevron {
+        transform: rotate(180deg);
+      }
+    }
+    .chevron {
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
     }
   }
   .accordion-card {
     height: 0;
     overflow: hidden;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
     &.active {
+      visibility: visible;
       height: auto;
+      .content {
+        display: block;
+      }
+    }
+    .content {
+      display: none;
+      padding: 8px;
     }
   }
   @media screen and(max-width: 890px) {
