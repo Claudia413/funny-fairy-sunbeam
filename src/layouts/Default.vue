@@ -15,7 +15,8 @@
     <slot/>
     </main>
     <footer>
-      <div class="container footer">
+      <div class="container">
+        <div class="footer">
         <section class="hours">
           <p class="strong">Opening hours</p>
           <p>Monday: 7am -8pm</p>
@@ -34,11 +35,18 @@
           <p>109 Clarence Street<br/>
           Riccarton<br/>
           Christchurch, 8011 <br/>
-          (Corner of Clarence Street and Blenheim Road)</p></address>
+          <p>(Corner of Clarence Street and Blenheim Road)</p></address>
         </section>
         <section class="location">
           <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" />
         </section>
+        </div>
+        <div class="fine-print">
+          <p>
+          ©Copyright 2020 Tower Junction Physio
+          </p>
+          <p>Made with love by Claudia Engelsman</p>
+        </div>
       </div>
     </footer>
   </div>
@@ -99,10 +107,16 @@ footer {
       font-weight: bold;
     }
   .hours {
-    line-height: 1;
+    p{
+      line-height: 1;
+    }
+
   }
   .footer-address {
     font-style: normal;
+    p {
+      line-height: 1;
+    }
     .phonenumber {
       text-decoration: none;
       color: inherit;
