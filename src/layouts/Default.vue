@@ -42,10 +42,9 @@
         </section>
         </div>
         <div class="fine-print">
-          <p>
-          ©Copyright 2020 Tower Junction Physio
-          </p>
-          <p>Made with love by Claudia Engelsman</p>
+          <p>©Copyright 2020 Tower Junction Physio</p>
+          <p>|</p>
+          <p>Made with love by <a href="https://claudiaengelsman.com">Claudia Engelsman</a></p>
         </div>
       </div>
     </footer>
@@ -107,7 +106,7 @@ footer {
       font-weight: bold;
     }
   .hours {
-    p{
+    p {
       line-height: 1;
     }
 
@@ -122,5 +121,23 @@ footer {
       color: inherit;
     }
   }
+  .location {
+    img{
+      max-width: 100%;
+    }
+  }
 }
+.fine-print {
+  display: flex;
+  @media screen and(max-width: 768px) {
+    justify-content: center;
+  }
+  p, a {
+    font-size: 12px;
+    color: #ffffffaf;
+    padding-right: 4px;
+    margin-bottom: 4px;
+    text-decoration: none;
+    }
+  }
 </style>
