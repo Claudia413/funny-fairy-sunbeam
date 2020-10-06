@@ -9,6 +9,12 @@
         <g-link class="nav__link" to="/treatments">Treatments</g-link>
         <g-link class="nav__link" to="/news">News</g-link>
       </nav>
+      <div class="nav-icon" @click="toggleShowMobileMenu()" :class="showMobileMenu? 'open' : ''" title="toggle mobile menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
       </div>
     </header>
     <main>
@@ -51,6 +57,21 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      showMobileMenu: false
+    }
+  },
+  methods: {
+    toggleShowMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 .layout {
   width: 100%;
@@ -80,11 +101,109 @@
   height: 80px;
 }
 
+.nav {
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 0;
+    transition: left, 0.4s ease-in-out;
+    padding: 36px;
+    box-sizing: border-box;
+    &.show {
+      left: 0;
+    }
+    a {
+    margin: 12px;
+    }
+  }
+}
+
 .nav__link {
   margin-left: 20px;
   color: white;
   cursor: pointer;
   text-decoration: none;
+}
+
+.nav-icon{
+  grid-area: toggle;
+  width: 36px;
+  height: 18px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: none;
+   @media only screen and (max-width: 768px) {
+		display: block;
+	}
+}
+
+.nav-icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #ffffff;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.nav-icon span:nth-child(2),.nav-icon span:nth-child(3) {
+  top: 9px;
+}
+
+.nav-icon span:nth-child(4) {
+  top: 18px;
+}
+
+.nav-icon.open span:nth-child(1) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+.nav-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav-icon.open span:nth-child(4) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
 }
 
 footer {
