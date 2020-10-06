@@ -3,7 +3,7 @@
     <header class="menubar">
       <div class="container header">
       <g-image src="~/assets/tjplogo.png" width="240" />
-      <nav class="nav">
+      <nav class="nav" :class="showMobileMenu? 'show' : ''">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
         <g-link class="nav__link" to="/treatments">Treatments</g-link>
@@ -90,6 +90,11 @@ export default {
 
 .menubar {
     background-color: #3e5c9a;
+    z-index: 800;
+    @media screen and(max-width: 768px) {
+      position: sticky;
+      top: 0;
+    }
 }
 
 .header {
@@ -103,8 +108,9 @@ export default {
 
 .nav {
   @media only screen and (max-width: 768px) {
+    display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #1e2e4d;
     width: 100%;
     position: fixed;
     top: 0;
@@ -114,6 +120,7 @@ export default {
     transition: left, 0.4s ease-in-out;
     padding: 36px;
     box-sizing: border-box;
+    z-index: 500;
     &.show {
       left: 0;
     }
@@ -147,6 +154,7 @@ export default {
   display: none;
    @media only screen and (max-width: 768px) {
 		display: block;
+    z-index: 950;
 	}
 }
 
