@@ -12,10 +12,10 @@
         <p>Saturday: closed</p>
         <p>Sunday: closed</p>
       </div>
-      <div class="route">
+      <!-- <div class="route">
         <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
         <g-image src="~/assets/towerjunctionphysiopractise.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
-      </div>
+      </div> -->
     </section>
     <section class="team">
       <div class="container">
