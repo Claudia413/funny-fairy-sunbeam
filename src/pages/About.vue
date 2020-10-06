@@ -1,6 +1,7 @@
 <template>
   <Layout>
     <section class="container location">
+      <h2 class="emphasize green">Our location</h2>
       <div class="hours">
         <strong><p>Opening hours</p></strong>
         <p>Monday: 7am -8pm</p>
@@ -13,6 +14,7 @@
       </div>
       <div class="route">
         <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
+        <g-image src="~/assets/towerjunctionphysiopractise.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
       </div>
     </section>
     <section class="team">
