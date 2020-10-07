@@ -6,6 +6,8 @@
         <a class="section-link" href="#treatments"><h6>When can we help?</h6></a>
         <a class="section-link" href="#techniques"><h6>How do we help?</h6></a>
         <a class="section-link" href="#what-to-expect"><h6>What to expect?</h6></a>
+        <a class="section-link" href="#pricing"><h6>Our prices</h6></a>
+        <a class="section-link" href="#acc"><h6>ACC</h6></a>
       </div>
     </section>
 
@@ -110,6 +112,20 @@
         <p>As a Tower Junction Physio patient, we want you to progress as rapidly as possible and we are committed to helping you.  We offer a follow up service between appointments if necessary, and also encourage self-help; the more you can do at home the better.</p>
         <p>We work closely with General Practitioners as well as Sports Medicine, Musculoskeletal and Orthopaedic Specialists.  We can refer directly to the appropriate specialist as well as arrange for you to have X-Rays or Ultrasound Scans as necessary.</p>
         <p>We understand that your time is valuable.  We try to adhere strictly to appointment times, and as we do not overload our appointment schedule you know you will receive our full attention throughout your visit.</p>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <h2 class="emphasize green">Our prices</h2>
+        <p>Put pricing information here</p>
+      </div>
+    </section>
+
+     <section class="section pricing" id="acc">
+      <div class="container">
+        <h2 class="emphasize green">ACC</h2>
+        <p>Put ACC information here</p>
       </div>
     </section>
 
