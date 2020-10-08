@@ -118,14 +118,40 @@
     <section class="section pricing" id="pricing">
       <div class="container">
         <h2 class="emphasize green">Our prices</h2>
-        <p>Put pricing information here</p>
+        <div>
+        <div class="price-table">
+          <div class="treatment-title">
+            <p>Private Initial Consultation</p>
+            <p>Private Follow Up Consultation</p>
+            <p>ACC Co-payment per visit</p>
+          </div>
+          <div class="price">
+            <p>$75.00</p>
+            <p>$65.00</p>
+            <p>$30.00</p>
+          </div>
+        </div>
+        <p class="subtitle">There may be an additional cost for any materials used during your treatment.</p>
+        </div>
+        <div class="pricing-info">
+          <h5>Please note:</h5>
+          <ul>
+            <li>If you are receiving physiotherapy treatment under ACC, or any other insurance company, and they decline the cover of your injury you will be liable for the full cost of your treatment.</li>
+            <li>In the event of non-payment of your account, then this will also include all recovery costs, legal fees and commissions that may occur in obtaining payment of the account.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
      <section class="section pricing" id="acc">
       <div class="container">
         <h2 class="emphasize green">ACC</h2>
-        <p>Put ACC information here</p>
+        <p>ACC (Accident Compensation Corporation) provides comprehensive injury cover for patients whose injury was caused by an accident.<br/>
+        The accident can be covered if it occurs at work, at home, on a sports field, on a road or in a vehicle-as long as there is a specific date which the injury occurred within the last 12 months and there was an aspect of force involved.  For example having a fall, lifting or twisting or being hit by another object.</p>
+        <p>To see a Physiotherapist, you don’t need to have a referral from your GP or Doctor, however if you do we can let them know how you are getting on if you would like us to.</p>
+        <p>All our Physiotherapists are ACC providers which means that they can register a claim for you if you had an accident.</p>
+        <p>When receiving ACC treatment there is a co-payment of $30.00 per visit.</p>
+        <p>Gradual process ACC claims, those that have occured at work over a gradual time rather than sudddenly, need to be registered by a Doctor.  ACC decisions for gradual process claims can be a complex, time consuming procedure.  Sometimes these claims are declined but until this decision is made ACC may pay for physio treatment excluding the $25.00 co payment.</p>
       </div>
     </section>
 
@@ -353,6 +379,16 @@ export default {
    }
 }
 
+.price-table {
+  display: flex;
+  .price {
+    font-weight: 600;
+  }
+}
+.treatment-title {
+  margin-right: 160px;
+}
+
 .faderesize-enter-active {
   transition: all 0.3s ease;
 }
@@ -364,5 +400,7 @@ export default {
   opacity: 0;
   height: auto;
 }
+
+
 
 </style>
