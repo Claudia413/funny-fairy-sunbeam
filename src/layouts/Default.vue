@@ -89,7 +89,7 @@ export default {
 }
 
 .menubar {
-    background-color: #3e5c9a;
+    background-color:#1e2e4d;
     z-index: 800;
     @media screen and(max-width: 768px) {
       position: sticky;
