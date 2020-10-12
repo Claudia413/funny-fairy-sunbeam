@@ -101,12 +101,12 @@
         </div>
         <div class="technique-accordion">
           <div v-for="(technique, index) in techniques" class="accordion-container" :key="technique.technique" >
-            <div class="accordion-button" :class="techniqueIndex == index?'active':''"
+            <div class="accordion-button" :class="closedAccordion == false && techniqueIndex == index?'active':''"
             @click="setTechniqueShown(index)">
             {{technique.technique}} <ChevronDown class="chevron" />
             </div>
             <transition name="appear" mode="out-in">
-            <div class="accordion-card" :key="techniqueIndex" :class="techniqueIndex == index?'active':''" >
+            <div class="accordion-card" :key="techniqueIndex+closedAccordion" :class="closedAccordion == false && techniqueIndex == index?'active':''" >
               <div class="content">
               <p>{{techniques[techniqueIndex].description}}</p>
               </div>
@@ -174,6 +174,7 @@ export default {
   data() {
     return {
       techniqueIndex: 0,
+      closedAccordion: false,
       techniques: [{
         technique: 'Education',
         description: 'Education is where we provide you with an understanding of what you have injured, why it is injured, how to fix the injury and how to stop it from happening again. If you understand all these aspects it gives you the ability to control your life better and in a safer way.'},
@@ -209,11 +210,20 @@ export default {
   },
   methods: {
     setTechniqueShown(techniqueId) {
-      if (this.techniqueIndex == techniqueId) {
-        console.log("write code to close the accordion")
+      // Open accordion in same place as already selected after it has been closed
+      if(this.techniqueIndex == techniqueId && this.closedAccordion == true) {
+        this.setAccordionState(false)
+        // Close accordion by choosing same treatment again
+      } else if (this.techniqueIndex == techniqueId) {
+        this.setAccordionState(true)
+        // Open accordion card for a treatment
       } else {
         this.techniqueIndex = techniqueId
+        this.setAccordionState(false)
       }
+    },
+    setAccordionState(bool) {
+      this.closedAccordion = bool;
     }
   }
 }
