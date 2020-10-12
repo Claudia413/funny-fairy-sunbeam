@@ -395,7 +395,7 @@ export default {
     max-height: 0;
   }
   100% {
-    max-height: 900px;
+    max-height: 1400px;
   }
 }
 
