@@ -23,29 +23,38 @@
     <footer>
       <div class="container">
         <div class="footer">
-        <section class="hours">
-          <p class="strong">Opening hours</p>
-          <p>Monday: 7am -8pm</p>
-          <p>Tuesdag: 7am -8pm</p>
-          <p>Wednesday: 7am -8pm</p>
-          <p>Thursday: 7am -8pm</p>
-          <p>Friday: 7am -8pm</p>
-          <p>Saturday: closed</p>
-          <p>Sunday: closed</p>
-        </section>
-        <section class="contact">
-          <address class="footer-address">
-          <p class="strong">Call us at:</p>
-          <p><a href="tel:033434345" class="phonenumber">(03) 34 34 345</a></p>
-          <p class="strong">Find us at:</p>
-          <p>109 Clarence Street<br/>
-          Riccarton<br/>
-          Christchurch, 8011 <br/>
-          <p>(Corner of Clarence Street and Blenheim Road)</p></address>
-        </section>
-        <section class="location">
-          <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" />
-        </section>
+          <section class="hours">
+            <p class="strong">Opening hours</p>
+            <p>Monday: 7am -8pm</p>
+            <p>Tuesdag: 7am -8pm</p>
+            <p>Wednesday: 7am -8pm</p>
+            <p>Thursday: 7am -8pm</p>
+            <p>Friday: 7am -8pm</p>
+            <p>Saturday: closed</p>
+            <p>Sunday: closed</p>
+          </section>
+          <section class="footer-navigation">
+            <p class="strong">Sitemap</p>
+            <g-link class="footer_nav_link" to="/">Home</g-link>
+            <g-link class="footer_nav_link" to="/about/">About</g-link>
+            <g-link class="footer_nav_link" to="/treatments">Treatments</g-link>
+            <g-link class="footer_nav_link" to="/contact">Contact</g-link>
+            <g-link class="footer_nav_link" to="/faq">FAQ</g-link>
+            <g-link class="footer_nav_link" to="/news">News</g-link>
+          </section>
+          <section class="contact">
+            <address class="footer-address">
+            <p class="strong">Call us at:</p>
+            <p><a href="tel:033434345" class="phonenumber">(03) 34 34 345</a></p>
+            <p class="strong">Find us at:</p>
+            <p>109 Clarence Street<br/>
+            Riccarton<br/>
+            Christchurch, 8011 <br/>
+            <p>(Corner of Clarence Street and Blenheim Road)</p></address>
+          </section>
+          <section class="location">
+            <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" />
+          </section>
         </div>
         <div class="fine-print">
           <p>©Copyright 2020 Tower Junction Physio</p>
@@ -73,6 +82,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .layout {
   width: 100%;
   margin: 0;
@@ -226,9 +236,6 @@ footer {
   padding-bottom: 12px;
   color: white;
   font-size: 13px;
-  section {
-    margin: 8px;
-  }
   .strong {
       font-weight: bold;
     }
@@ -250,10 +257,29 @@ footer {
   }
   .location {
     img{
+      margin-top: 16px;
       max-width: 100%;
     }
   }
+  .footer-navigation {
+    display: flex;
+    flex-direction: column;
+    p {
+      line-height: 1;
+    }
+    .footer_nav_link {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      line-height: 1;
+      margin-block-start: 0;
+      margin-block-end: 1em;
+      font-family: "Hind", arial;
+      display: inline-block;
+    }
+  }
 }
+
 .fine-print {
   display: flex;
   @media screen and(max-width: 768px) {
