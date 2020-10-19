@@ -3,25 +3,32 @@
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
+    <section class="container">
+    <h1>Hi there!</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
+      This page has not yet received much love and attention. The other pages, which you can access through the menu above, have much more information and features to look at.
     </p>
+    <p>Some features that might be a nice idea for this homepage:</p>
+    <ul>
+      <li>section that shares a little about the team or the practise with a link to the about page</li>
+      <li>a call-to-action section where we invite people to call the practise for an appointment</li>
+      <li>A picture of the practise/team/ to give the page a bit more visual appeal</li>
+      <li>Short introduction to different services offered, possibly with a link to the treatments page</li>
+      <li>Some frequently asked questions and answers</li>
+      <li>A small bar with a warning for covid-19 updates that refers to the new page, could be turned off and on as situation changes</li>
+    </ul>
+    <p>This website has been build with VueJS and Gridsome to make it really fast and is currently hosted on Netlify</p>
+    <p>All the content currently on here is put in the code. For easy management by you or someone in the team in the future I would set it up with Prismic.io. This is a content management system that offers a free account with data up till 100gb per month. This is quite generous and Prismic works well with Vue and Gridsome. This would not cost you anything extra in hosting costs and will be plenty of allowed data unless everyone on the South island goes to the website and uses it a lot in the same month. <a href="https://prismic.io/">More info on Prismic here</a></p>
+    <p>If you're curious about the code, I have no secrets, it's properly structured and documented and it is available publicly on Github <a href="https://github.com/Claudia413/funny-fairy-sunbeam/">here</a></p>
 
-    <!-- <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p> -->
-
+    </section>
   </Layout>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Homepage'
   }
 }
 </script>

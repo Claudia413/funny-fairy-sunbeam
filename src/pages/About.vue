@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <section class="container location">
-      <h2 class="emphasize green">Our location</h2>
-      <div class="hours">
+    <!-- <section class="container location">
+      <h2 class="emphasize green">Our location</h2> -->
+      <!-- <div class="hours">
         <strong><p>Opening hours</p></strong>
         <p>Monday: 7am -8pm</p>
         <p>Tuesdag: 7am -8pm</p>
@@ -11,12 +11,12 @@
         <p>Friday: 7am -8pm</p>
         <p>Saturday: closed</p>
         <p>Sunday: closed</p>
-      </div>
+      </div> -->
       <!-- <div class="route">
         <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
         <g-image src="~/assets/towerjunctionphysiopractise.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="400" />
       </div> -->
-    </section>
+    <!-- </section> -->
     <section class="team">
       <div class="container">
       <h2 class="emphasize green">Our team</h2>
