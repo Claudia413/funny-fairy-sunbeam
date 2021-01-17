@@ -53,7 +53,8 @@
             <p>(Corner of Clarence Street and Blenheim Road)</p></address>
           </section>
           <section class="location">
-            <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" />
+            <a href="https://www.google.com/maps/place/Tower+Junction+Physio/@-43.5368789,172.6020191,15.5z/data=!4m5!3m4!1s0x0:0x9c5693a7da53015f!8m2!3d-43.5368379!4d172.6026916">
+            <g-image src="~/assets/map.jpg" alt="map of the crossing of Blenheim Road and Clarence street marking the location of the practise" class="map-image" width="320" /></a>
           </section>
         </div>
         <div class="fine-print">

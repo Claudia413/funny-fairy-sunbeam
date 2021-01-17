@@ -1,6 +1,8 @@
 <template>
   <Layout>
-
+    <section class="homepage-header">
+      <g-image class="header-image" alt="Runner in a field with mountains in the back" src="~/assets/headerhomepagerunner.jpg" width="1600" />
+    </section>
     <section class="container">
     <h1>Hi there!</h1>
     <p>
@@ -40,5 +42,16 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+.homepage-header {
+  display: flex;
+  margin: 0;
+}
+.header-image {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
 }
 </style>
