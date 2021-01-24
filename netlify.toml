@@ -1,0 +1,4 @@
+[dev]
+command = "gridsome develop"
+[build]
+  functions = "functions"
