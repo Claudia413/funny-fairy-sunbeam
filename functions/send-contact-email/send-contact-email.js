@@ -1,17 +1,35 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const handler = async (event) => {
-  try {
-    const subject = event.queryStringParameters.name || 'World'
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
-  } catch (error) {
-    return { statusCode: 500, body: error.toString() }
-  }
-}
+require('dotenv').config()
+const { SENDGRID_API_KEY, FROM_EMAIL_ADDRESS, CONTACT_TO_EMAIL_ADDRESS } = process.env
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(SENDGRID_API_KEY);
 
-module.exports = { handler }
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed', headers: { 'Allow': 'POST' } }
+  }
+
+  // const data = JSON.parse(event.body)
+  // console.log('evnt', event)
+  // if (!data.message || !data.contactName || !data.contactEmail) {
+  //   return { statusCode: 422, body: 'Name, email, and message are required.' }
+  // }
+
+  const msg = {
+    to: CONTACT_TO_EMAIL_ADDRESS, // Change to your recipient
+    from: FROM_EMAIL_ADDRESS, // Change to your verified sender
+    subject: "Sending with SendGrid is Fun",
+    text: "and easy to do anywhere, even with Node.js",
+    html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+  };
+  try {
+    await sgMail.send(msg);
+  } catch (error) {
+    console.error(JSON.stringify(error, null, 2));
+    return {
+      statusCode: 422,
+      body: `error: ${error}`
+    }
+  }
+  console.log("Email sent");
+  return { statusCode: 200, body: "Your message was successfully sent!" };
+};
