@@ -4,12 +4,12 @@
       <!-- people should not fill these in and expect good things -->
       <div class="form-fields" aria-label="Please leave the following three fields empty">
         <label for="b_name">Name: </label>
-        <input type="text" v-bind="b_name" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name" />
+        <input type="text" v-model="b_name" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name" />
 
         <label for="b_email">Email: </label>
         <input
           type="email"
-          v-bind="b_email"
+          v-model="b_email"
           name="b_email"
           tabindex="-1"
           value=""
@@ -20,7 +20,7 @@
         <label for="b_comment">How can we help: </label>
         <textarea
           name="b_comment"
-          v-bind="b_message"
+          v-model="b_message"
           tabindex="-1"
           placeholder="Please comment"
           id="b_comment"
@@ -30,9 +30,8 @@
       <input
         type="text"
         id="name"
-        v-bind="contactName"
+        v-model="contactName"
         size="50"
-        value=""
         placeholder="Name"
         class="contact-field"
         aria-label="Name"
@@ -42,9 +41,8 @@
         autocapitalize="off"
         autocorrect="off"
         id="email"
-        v-bind="contactEmail"
+        v-model="contactEmail"
         size="50"
-        value=""
         placeholder="E-mail address"
         class="contact-field"
         aria-label="E-mail address"
@@ -52,14 +50,13 @@
       <input
         type="message"
         id="message"
-        v-bind="contactMessage"
+        v-model="contactMessage"
         size="200"
-        value=""
         placeholder="Your message"
         class="contact-field"
         aria-label="Short description of your problem"
       />
-      <div class="button" @click="sendMessage()">click here to send</div>
+      <div class="button" type="submit" @click="sendMessage()">click here to send</div>
       <article
         v-for="msg in messages"
         :key="msg.text"
@@ -67,7 +64,7 @@
         :class="msg.type === 'success' ? 'is-success' : 'is-danger'"
       >
         <div class="message-body">
-          { }
+          {{ msg.text.data }}
         </div>
       </article>
     </form>
@@ -75,6 +72,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "ContactForm",
   data() {
@@ -106,7 +105,7 @@ export default {
     },
     async triggerSendMessageFunction() {
       try {
-        const response = await this.$axios.$post("/.netlify/functions/send-contact-email", {
+        const response = await axios.post("/.netlify/functions/send-contact-email", {
           contactName: this.contactName,
           contactEmail: this.contactEmail,
           message: this.contactMessage,
@@ -115,7 +114,7 @@ export default {
         this.messages.push({ type: "success", text: response });
       } catch (error) {
         console.log("error", error);
-        this.messages.push({ type: "error", text: error.response.data });
+        this.messages.push({ type: "error", text: error.response });
       }
     },
   },
