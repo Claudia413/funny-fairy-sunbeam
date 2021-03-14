@@ -26,16 +26,21 @@
     <p>This website has been build with VueJS and Gridsome to make it really fast and is currently hosted on Netlify</p>
     <p>All the content currently on here is put in the code. For easy management by you or someone in the team in the future I would set it up with Prismic.io. This is a content management system that offers a free account with data up till 100gb per month. This is quite generous and Prismic works well with Vue and Gridsome. This would not cost you anything extra in hosting costs and will be plenty of allowed data unless everyone on the South island goes to the website and uses it a lot in the same month. <a href="https://prismic.io/">More info on Prismic here</a></p>
     <p>If you're curious about the code, I have no secrets, it's properly structured and documented and it is available publicly on Github <a href="https://github.com/Claudia413/funny-fairy-sunbeam/">here</a></p>
+    <contact-form/>
 
     </section>
   </Layout>
 </template>
 
 <script>
+import ContactForm from "~/components/ContactForm"
+
 export default {
-  metaInfo: {
+metaInfo: {
     title: 'Homepage'
-  }
+  },
+  components: { ContactForm },
+
 }
 </script>
 

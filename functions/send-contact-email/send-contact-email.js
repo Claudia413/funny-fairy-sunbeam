@@ -8,18 +8,18 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed', headers: { 'Allow': 'POST' } }
   }
 
-  // const data = JSON.parse(event.body)
-  // console.log('evnt', event)
-  // if (!data.message || !data.contactName || !data.contactEmail) {
-  //   return { statusCode: 422, body: 'Name, email, and message are required.' }
-  // }
+  const data = JSON.parse(event.body)
+  console.log('evnt', event)
+  if (!data.message || !data.contactName || !data.contactEmail) {
+    return { statusCode: 422, body: 'Name, email, and message are required.' }
+  }
 
   const msg = {
     to: CONTACT_TO_EMAIL_ADDRESS, // Change to your recipient
     from: FROM_EMAIL_ADDRESS, // Change to your verified sender
-    subject: "Sending with SendGrid is Fun",
-    text: "and easy to do anywhere, even with Node.js",
-    html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+    subject: "New message from website contact form",
+    text: data.message,
+    html: `<strong>${data.message}</strong>`,
   };
   try {
     await sgMail.send(msg);
